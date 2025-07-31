@@ -44,7 +44,7 @@ If no `.nvim-compile` file is found, the default `make` command is used.
 You can change the search depth and default build command:
 
 ```lua
-require("compile.nvim").setup({
+require("compile").setup({
   max_depth = 7,
   default_makeprg = "make"
 })

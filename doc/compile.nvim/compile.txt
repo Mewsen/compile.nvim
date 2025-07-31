@@ -35,7 +35,7 @@ CONFIGURATION                                         *compile.nvim-config*
 You can configure the plugin in your `init.lua`:
 
 >
-    require("compile.nvim").setup({
+    require("compile").setup({
       max_depth = 7,           -- how many parent dirs to search
       default_makeprg = "make" -- fallback build command
     })
