@@ -1,0 +1,60 @@
+*compile.nvim.txt*        A plugin for dynamic :make command configuration
+
+==============================================================================
+INTRODUCTION                                          *compile.nvim-intro*
+
+`compile.nvim` automatically configures Neovim’s `:make` command
+based on a `.nvim-compile` file found in the current working directory
+or any parent directory (up to a configurable depth).
+
+This is useful when working on multiple projects with different build
+commands, allowing you to run `:make` without manually changing `makeprg`.
+
+==============================================================================
+USAGE                                                 *compile.nvim-usage*
+
+1. Install the plugin with your favorite plugin manager.
+2. Place a `.nvim-compile` file in the root of your project:
+
+>
+    go build ./cmd/server
+<
+3. Open Neovim anywhere inside the project and run:
+
+>
+    :make
+<
+   Neovim will automatically run the command from `.nvim-compile`.
+
+If no `.nvim-compile` file is found, `compile.nvim` falls back to the
+default `make` command.
+
+==============================================================================
+CONFIGURATION                                         *compile.nvim-config*
+
+You can configure the plugin in your `init.lua`:
+
+>
+    require("compile.nvim").setup({
+      max_depth = 7,           -- how many parent dirs to search
+      default_makeprg = "make" -- fallback build command
+    })
+<
+
+==============================================================================
+EVENTS                                               *compile.nvim-events*
+
+- Automatically updates `makeprg` on:
+  - Buffer enter
+  - Directory change
+  - Saving `.nvim-compile`
+
+==============================================================================
+AUTHOR                                               *compile.nvim-author*
+
+Written by Michael Tews <michael@tews.dev>
+
+==============================================================================
+LICENSE                                              *compile.nvim-license*
+
+MIT License
