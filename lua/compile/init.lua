@@ -43,7 +43,6 @@ function M.update_makeprg()
         local cmd = read_command(compile_file)
         if cmd and cmd ~= "" then
             vim.o.makeprg = cmd
-            vim.notify("compile.nvim: using command from " .. compile_file, vim.log.levels.INFO)
             return
         end
     end
