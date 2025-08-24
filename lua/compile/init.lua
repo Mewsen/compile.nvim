@@ -1,7 +1,7 @@
 local M = {}
 
 M.config = {
-    max_depth = 4,
+    max_depth = 1,
     default_makeprg = "make",
 }
 

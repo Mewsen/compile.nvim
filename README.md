@@ -1,5 +1,3 @@
-### **`README.md`**
-
 # compile.nvim
 
 `compile.nvim` is a Neovim plugin that automatically sets the `:make` command based on a `.nvim-compile` file found in the current working directory or any parent directory (up to a configurable depth).
@@ -45,8 +43,8 @@ You can change the search depth and default build command:
 
 ```lua
 require("compile").setup({
-  max_depth = 7,
-  default_makeprg = "make"
+  max_depth = 1, -- Default value
+  default_makeprg = "make" -- Default value
 })
 ```
 

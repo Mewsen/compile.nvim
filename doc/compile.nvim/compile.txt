@@ -36,7 +36,7 @@ You can configure the plugin in your `init.lua`:
 
 >
     require("compile").setup({
-      max_depth = 7,           -- how many parent dirs to search
+      max_depth = 1,           -- how many parent dirs to search
       default_makeprg = "make" -- fallback build command
     })
 <
